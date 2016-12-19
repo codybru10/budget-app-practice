@@ -1,0 +1,19 @@
+<h1>Places Visited</h1>
+
+<form action="/add_location" method="post">
+  <label for="name">Enter Location</label>
+  <input type="text" name="name" id="name">
+  <label for="date">Enter Date</label>
+  <input type="date" name="date" id="date">
+  <button type="submit" class="btn btn-primary">Add Location</button>
+</form>
+
+<h3>List of places you've visited</h3>
+
+<% if @locations.any? %>
+  <% @locations.each do |location| %>
+    <li><%= location.name %></li>
+  <% end %>
+<% else %>
+  <p>You have no locations on your list</p>
+<% end %>
